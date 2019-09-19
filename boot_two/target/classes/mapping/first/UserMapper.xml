@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.boot.base.code.first.dao.UserMapper">
+
+    <select id="getListUser" resultType="map">
+        select * from user
+    </select>
+
+
+    <update id="updateSql" parameterType="String" >
+        update user a set a.user_name=#{name} where a.id='1'
+
+    </update>
+
+    <update id="updateErrorSql" parameterType="String" >
+        update user a set a.=#{name} where a.id=1
+
+    </update>
+
+    <insert id="saveUser" parameterType="com.spring.boot.base.code.first.entity.User" >
+      insert into user (id,user_name,password,age) values
+      (#{id},#{userName},#{password},#{age})
+
+    </insert>
+
+
+</mapper>
